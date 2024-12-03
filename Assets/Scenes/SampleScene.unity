@@ -1029,6 +1029,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7811534199dcf5f4d998086e4d52f7c4, type: 3}
+--- !u!1 &1481647636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9075144199441347407, guid: 4507ee1a8eb7f7d44a04f47e7320244c, type: 3}
+  m_PrefabInstance: {fileID: 1940336429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1481647638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481647636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3f3d4c48150ab439284ce6cc631310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1941010109}
+  grabTransform: {fileID: 1727844949}
 --- !u!1 &1583492339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1169,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!4 &1727844949 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8513132824474387415, guid: 4507ee1a8eb7f7d44a04f47e7320244c, type: 3}
+  m_PrefabInstance: {fileID: 1940336429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1847518151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1377,15 +1401,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstPersonCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 1024293233258227286, guid: 4507ee1a8eb7f7d44a04f47e7320244c, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 7028667167019814391, guid: 4507ee1a8eb7f7d44a04f47e7320244c, type: 3}
       propertyPath: whatIsGround.m_Bits
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9075144199441347407, guid: 4507ee1a8eb7f7d44a04f47e7320244c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075144199441347407, guid: 4507ee1a8eb7f7d44a04f47e7320244c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2007513994194451002, guid: 4507ee1a8eb7f7d44a04f47e7320244c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9075144199441347407, guid: 4507ee1a8eb7f7d44a04f47e7320244c, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1481647638}
   m_SourcePrefab: {fileID: 100100000, guid: 4507ee1a8eb7f7d44a04f47e7320244c, type: 3}
+--- !u!20 &1941010109 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2689109803150115692, guid: 4507ee1a8eb7f7d44a04f47e7320244c, type: 3}
+  m_PrefabInstance: {fileID: 1940336429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1961688098 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dddd8a2a57d8f244f83fae749fe86816, type: 3}
@@ -1418,6 +1463,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1961688102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961688098}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 1.8, z: 3.2}
+  m_Center: {x: -0.2, y: 0, z: 0}
 --- !u!1 &2039410785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4708148193998690132, guid: defcc993ef76f694897f2fb95f263f4a, type: 3}
@@ -1528,6 +1594,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dddd8a2a57d8f244f83fae749fe86816, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1961688100}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dddd8a2a57d8f244f83fae749fe86816, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1961688102}
     - targetCorrespondingSourceObject: {fileID: 8472218100527760654, guid: dddd8a2a57d8f244f83fae749fe86816, type: 3}
       insertIndex: -1
       addedObject: {fileID: 230764666}
