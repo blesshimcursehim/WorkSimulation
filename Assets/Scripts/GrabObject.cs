@@ -4,18 +4,14 @@ public class GrabObject : MonoBehaviour
 {
     public Camera camera;
     public Transform grabTransform;
+    public PlaceObject placeObjectComponent;
 
     private Rigidbody grabbedRb = null;
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
-            if (grabbedRb != null)
+            if (grabbedRb == null)
                 Grab();
             else
                 Release();
@@ -34,16 +30,23 @@ public class GrabObject : MonoBehaviour
 
         Rigidbody tempGrabbed = hitInfo.collider.attachedRigidbody;
 
-        tempGrabbed.isKinematic = true;
-        Debug.Log(grabbedRb);
-        tempGrabbed.position = grabTransform.position;
-        tempGrabbed.transform.parent = camera.transform;
-
-        grabbedRb = tempGrabbed;
+        grabbedRb.isKinematic = true;
+        grabbedRb.position = grabTransform.position;
+        grabbedRb.transform.parent = camera.transform;
+        grabbedRb.transform.localPosition = grabTransform.localPosition;
+        grabbedRb.GetComponent<Collider>().enabled = false;
     }
 
     void Release()
     {
+        grabbedRb.GetComponent<Collider>().enabled = true;
+        grabbedRb.isKinematic = false;
+        grabbedRb.transform.parent = null;
 
+
+        if (placeObjectComponent != null)
+            placeObjectComponent.Place(grabbedRb, 3f);
+
+        grabbedRb = null;
     }
 }
