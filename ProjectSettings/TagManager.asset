@@ -5,7 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Grabbable
-  - PlacementPoint
+  - LetterA
+  - LetterB
+  - LetterC
+  - BinA
+  - BinB
+  - BinC
   layers:
   - Default
   - TransparentFX
